@@ -1,4 +1,5 @@
 """Generate Markov text from text files."""
+import random
 from random import choice
 
 
@@ -51,30 +52,32 @@ def make_chains(text_string):
             chains[pairs]=[]
         chains[pairs].append(third_words)
 
-    print(chains)
-
-            
-
-        
-        #chains={pairs:third_words}
-    #print(chains)
-
-    # chains[pairs]=third_words
     # print(chains)
-    
 
     # your code goes here
 
     return chains
 
 
-
+words = []
 def make_text(chains):
     """Return text from chains."""
-
-    words = []
-
-    # your code goes here
+    print(chains)
+    keys = ("like", "green") # seed
+    words.append(keys[0])
+    words.append(keys[1])    
+    while True:
+        # if there is a key error, stop there
+        if keys in chains:
+            values = chains[keys]
+            word_one= keys[0]
+            word_two=keys[1]
+            word_three=random.choice(values)
+            words.append(word_three)
+            keys = (word_two, word_three)
+        else:
+            break;
+    print(' '.join(words))
 
     return ' '.join(words)
 
