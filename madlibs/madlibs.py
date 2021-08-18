@@ -46,7 +46,6 @@ def show_madlib_forms():
     """Lets user choose if they want to pay a game or not"""
     decision = request.args.get("gameoption")
     
-    
     if decision=='yes':
         return render_template("game.html")
     else:
@@ -55,15 +54,21 @@ def show_madlib_forms():
 @app.route('/madlib')
 def show_madlib():
     """Returns a story based on user's selected options"""
+    
     person=request.args.get("person")
     color=request.args.get("color")
     noun=request.args.get("noun")
     adjective=request.args.get("adjective")
+    favthing=request.args.get("favthing")
+   
     return render_template("madlib.html",
                             person=person,
                             color=color,
                             noun=noun,
-                            adjective=adjective)
+                            adjective=adjective,
+                            favthing=favthing)
+                    
+    
 
     
 

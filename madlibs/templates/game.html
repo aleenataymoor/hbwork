@@ -5,6 +5,7 @@
 </head>
 <body>
     <form action="/madlib">
+        {{me}}
         Choose your name,color,noun and an adjective.
         Name
         <select name="person">
@@ -36,6 +37,23 @@
             <option value="chaotic">Chaotic</option>
             <option value="unexpected">Unexpected</option>
         </select><br>
+            Choose one or more fav things to do.
+          
+            <input type="checkbox" name="favthing" value="bicycling">
+            <label>Bicycling</label>
+          
+            <input type="checkbox" name="favthing" value="gaming">
+            <label>Gaming</label>
+          
+            <input type="checkbox" name="favthing" value="dancing">
+            <label>Dancing</label>
+
+            <input type="checkbox" name="favthing" value="running">
+            <label>Running/label>
+          
+            <input type="checkbox" name="favthing" value="kite-flying">
+            <label>Kite Flying</label>
+        
       
       <input type="submit">
       
